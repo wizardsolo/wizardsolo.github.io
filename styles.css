@@ -14,7 +14,7 @@ html, body {
 }
 
 body {
-  background-image: url('/stuff/bg.jpg');
+  background-image: url('stuff/bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -65,7 +65,7 @@ body::after {
 
 #socials {
   position: fixed;
-  bottom: 32px;
+  bottom: 48px;
   left: 32px;
   z-index: 2;
   display: flex;
@@ -76,9 +76,9 @@ body::after {
 
 #socials-label {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  color: #ccc;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #ffffff;
 }
 
 #socials-icons {
@@ -88,7 +88,7 @@ body::after {
 
 .social-icon {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   transition: all .2s ease-in-out;
   text-decoration: none;
 }
@@ -112,8 +112,8 @@ body::after {
 #projects-label {
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
-  font-size: 1rem;
-  color: #ccc;
+  font-size: 1.4rem;
+  color: #ffffff;
   margin-bottom: 4px;
 }
 
