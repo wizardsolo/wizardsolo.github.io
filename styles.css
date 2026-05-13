@@ -1,5 +1,10 @@
 :root {
-  --accent-dark: #4ade80;
+  --tung: #0a1f0f;
+  --accent: #1e8449;
+  --accent-hover: #27ae60;
+  --text: #ffffff;
+  --text-dim: #f3f3f3;
+  --socialhovercolorwhateverbruh: rgba(94, 255, 161, 0.5);
 }
 
 * {
@@ -11,98 +16,111 @@
 html, body {
   width: 100%;
   height: 100%;
+  background: var(--tung);
 }
 
-body {
+#tungtungtuff {
+  position: fixed;
+  inset: 0;
   background-image: url('stuff/bg.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  z-index: 0;
+}
+
+#tungtungtuffer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#tungtungtuffer.visible {
+  opacity: 1;
 }
 
 body::after {
   content: '';
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.55);
   pointer-events: none;
   z-index: 1;
 }
 
-#content {
+#roddyricchbox {
   position: fixed;
-  top: 32px;
-  left: 32px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
   z-index: 2;
 }
 
 #pfp {
-  width: 190px;
-  height: 190px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
   border-radius: 50%;
 }
 
-#name {
+#qatualqatualqatualqatualqatual {
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
-  font-size: 2rem;
-  color: #fff;
+  font-size: 1.8rem;
+  color: var(--text);
 }
 
 #bio {
   font-family: 'Quicksand', sans-serif;
   font-weight: 600;
-  font-size: 1.1rem;
-  color: #ccc;
+  font-size: 0.9rem;
+  color: var(--text-dim);
   text-align: center;
+  max-width: 185px;
+  line-height: 1.5;
 }
 
 #socials {
-  position: fixed;
-  bottom: 48px;
-  left: 32px;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  margin-top: 4px;
 }
 
 #socials-label {
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
-  font-size: 1.6rem;
-  color: #ffffff;
+  font-size: 1rem;
+  color: var(--text);
 }
 
 #socials-icons {
   display: flex;
-  gap: 14px;
+  gap: 12px;
 }
 
 .social-icon {
-  color: #fff;
-  font-size: 2.2rem;
-  transition: all .2s ease-in-out;
+  color: var(--text);
+  font-size: 1.7rem;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
   text-decoration: none;
 }
 
 .social-icon:hover {
-  color: var(--accent-dark);
-  text-shadow: 0 0 10px var(--accent-dark), 0 0 20px var(--accent-dark);
+  color: var(--accent-hover);
+  text-shadow: 0 0 10px var(--accent-hover), 0 0 20px var(--accent-hover);
 }
 
 #projects {
-  position: fixed;
-  bottom: 32px;
-  right: 32px;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,71 +130,29 @@ body::after {
 #projects-label {
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
-  font-size: 1.4rem;
-  color: #ffffff;
-  margin-bottom: 4px;
+  font-size: 1rem;
+  color: var(--text);
 }
 
-.project-card {
-  position: relative;
-  width: 340px;
+.project-btn {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 10px 24px;
+  background-color: var(--tung);
+  color: var(--text);
   border-radius: 8px;
-  overflow: hidden;
-  outline: 2px solid var(--accent-dark);
+  outline: 2px solid var(--accent);
   border: 4px solid transparent;
   cursor: pointer;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.project-card:hover {
-  border: 4px solid var(--accent-dark);
-  box-shadow: 0 0 10px var(--accent-dark), 0 0 20px var(--accent-dark), 0 0 30px var(--accent-dark);
+.project-btn:hover {
+  border: 4px solid var(--accent);
+  box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--accent);
   outline: 2px solid transparent;
-}
-
-.project-img {
-  width: 100%;
-  display: block;
-  transition: filter .2s ease-in-out;
-}
-
-.project-card:hover .project-img {
-  filter: blur(4px) brightness(0.4);
-}
-
-.project-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px;
-  opacity: 0;
-  transition: opacity .2s ease-in-out;
-}
-
-.project-card:hover .project-overlay {
-  opacity: 1;
-}
-
-.project-title {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 1.4rem;
-  color: #fff;
-  text-align: center;
-}
-
-.project-desc {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 600;
-  font-size: 0.75rem;
-  color: #ddd;
-  text-align: center;
-  line-height: 1.4;
 }
 
 #enter-screen {
@@ -185,8 +161,8 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(8px) brightness(0.5);
-  -webkit-backdrop-filter: blur(8px) brightness(0.5);
+  backdrop-filter: blur(8px) brightness(0.45);
+  -webkit-backdrop-filter: blur(8px) brightness(0.45);
   cursor: pointer;
   transition: opacity 0.6s ease;
   z-index: 100;
@@ -197,11 +173,10 @@ body::after {
   pointer-events: none;
 }
 
-#enter-text {
+#clicktoenterthingy {
   font-family: 'Quicksand', sans-serif;
   font-weight: 600;
   font-size: 1.4rem;
-  color: #fff;
+  color: var(--text);
   letter-spacing: 0.05em;
 }
- 
